@@ -1,0 +1,14 @@
+{
+  "name": "sprint-ticket-agent",
+  "description": "Turn natural-language descriptions of upcoming work into properly structured Jira Stories for the ECM project in Jira Data Center. Drafts and previews tickets, asks for any missing required fields, and only creates them after explicit user approval.",
+  "model": "auto",
+  "includeMcpJson": true,
+  "tools": [
+    "read",
+    "subagent",
+    "@atlassian-jira-dc"
+  ],
+  "allowedTools": ["read", "subagent", "@atlassian-jira-dc/*search*", "@atlassian-jira-dc/*get*", "@atlassian-jira-dc/*create*", "@atlassian-jira-dc/*update*"],
+  "prompt": "file://./sprint-agent.md",
+  "hooks": {}
+}

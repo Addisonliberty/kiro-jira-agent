@@ -1,0 +1,28 @@
+{
+  "name": "session-memory-agent",
+  "description": "Distills session insights into persistent memory files (MEMORY.md and user.md). Indexes past sessions for searchable history.",
+  "model": "auto",
+  "tools": [
+    "read",
+    "write",
+    "knowledge"
+  ],
+  "allowedTools": [
+    "read",
+    "write",
+    "knowledge"
+  ],
+  "prompt": "file://./session-memory-agent.md",
+  "resources": [
+    {
+      "type": "knowledgeBase",
+      "source": "file://~/.kiro/sessions/files",
+      "name": "SessionHistory",
+      "description": "Past conversation sessions for context during distillation",
+      "indexType": "best",
+      "autoUpdate": true,
+      "include": ["*.txt"]
+    }
+  ],
+  "hooks": {}
+}
